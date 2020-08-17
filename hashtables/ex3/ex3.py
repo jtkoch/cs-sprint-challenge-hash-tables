@@ -4,6 +4,20 @@ def intersection(arrays):
     """
     # Your code here
 
+    cache = {}
+    result = []
+
+    for sub_array in arrays:
+        for num in sub_array:
+            if num in cache:
+                result.append(num)
+            else:
+                cache[num] = 1
+
+    result = dict.fromkeys(result) # creates a new list without duplicates in the list
+    result = list(result)
+
+
     return result
 
 
